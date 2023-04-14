@@ -1,3 +1,4 @@
+'''Trying to get available dates, still testing'''
 import requests
 
 # Set our variables for the request we want to make
@@ -22,6 +23,7 @@ response = requests.get(
     base_url,
     headers=headers,
     params=params,
+     timeout=0.01
 )
 
 # Convert the data from a JSON string to a python dictionary
