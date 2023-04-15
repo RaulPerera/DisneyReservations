@@ -2,9 +2,11 @@
 import requests
 
 # Set our variables for the request we want to make
-base_url = 'https://disneyworld.disney.go.com/availability-calendar/api/calendar'
-start_date = '2022-05-15'
-end_date = '2022-05-21'
+#base_url = 'https://disneyworld.disney.go.com/availability-calendar/api/calendar'
+#start_date = '2022-05-15'
+#end_date = '2022-05-21'
+
+base_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/19634138;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
 
 # Add a header so that the request looks legit
 headers = {
