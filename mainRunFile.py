@@ -9,6 +9,8 @@ import requests
 
 base_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/19634138;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
 
+open_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/90001373;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
+
 # Add a header so that the request looks legit
 #headers = {
 #    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:98.0) Gecko/20100101 Firefox/98.0',
@@ -33,5 +35,12 @@ response = requests.get(
 # Convert the data from a JSON string to a python dictionary
 #data = response.json()
 
+goodresponse = requests.get(open_url)
+
 isItOpen = json.loads(response.text)
 isItOpen
+
+OpenRestaurant = json.loads(goodresponse.text)
+OpenRestaurant
+
+3+5
