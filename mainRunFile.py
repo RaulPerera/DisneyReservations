@@ -7,9 +7,9 @@ import requests
 #start_date = '2022-05-15'
 #end_date = '2022-05-21'
 
-base_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/19634138;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
+space220_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/19634138;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
 
-open_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/90001373;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
+chefsdeFrance_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/dining-availability/%7BD7B825B5-061E-4CD1-8DCC-1950A408F3DC%7D/wdw/90001373;entityType=restaurant/table-service/1/2023-06-16/?searchTime=18:00:00'
 
 # Add a header so that the request looks legit
 #headers = {
@@ -25,7 +25,7 @@ open_url = 'https://disneyworld.disney.go.com/finder/api/v1/explorer-service/din
 
 # Using the above data, make our request, and get our response
 response = requests.get(
-    base_url
+    chefsdeFrance_url
     #,
     # headers=headers,
     # params=params,
@@ -35,12 +35,11 @@ response = requests.get(
 # Convert the data from a JSON string to a python dictionary
 #data = response.json()
 
-goodresponse = requests.get(open_url)
-
 isItOpen = json.loads(response.text)
-isItOpen
 
-OpenRestaurant = json.loads(goodresponse.text)
-OpenRestaurant
 
-3+5
+if 'offers' in isItOpen:    
+    print("Reservations Available!")
+else:
+    print("Keep Looking!")
+
